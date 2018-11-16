@@ -41,8 +41,8 @@
                   <TextField promptText="username" />
                   <TextField layoutX="10.0" layoutY="10.0" promptText="password" />
                   <Region HBox.hgrow="ALWAYS" />
-                  <Button mnemonicParsing="false" onAction="#showItemSellIn" text="Sell In" />
-                  <Button mnemonicParsing="false" onAction="#showItemQuality" text="Quality" />
+                  <Button mnemonicParsing="false" text="Sell In" />
+                  <Button mnemonicParsing="false" text="Quality" />
                   <Button layoutX="332.0" layoutY="10.0" mnemonicParsing="false" onAction="#updateQuality" text="Update" />
                </children>
                <VBox.margin>

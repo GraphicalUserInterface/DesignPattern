@@ -73,12 +73,10 @@ public class Controller implements Initializable {
             }
             itemStrategy.update(item);
         }
-        //refresh the listView and show the updated SellIn
         ListViewSellIn.getItems().setAll();
         for (Item item : items){
             ListViewSellIn.getItems().add(item.getSellIn());
         }
-        //refresh the listView and show the updated Quality
         ListViewQuality.getItems().setAll();
         for (Item item : items){
             ListViewQuality.getItems().add(item.getQuality());
