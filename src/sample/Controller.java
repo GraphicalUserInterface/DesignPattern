@@ -3,12 +3,12 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.scene.control.ListView;
 
 
 public class Controller implements Initializable {
+
 
     public Item[] getItems() {
         return items;
@@ -24,7 +24,7 @@ public class Controller implements Initializable {
     public final String Backstage_passes_to_a_TAFKAL80ETC_concert = "Backstage passes to a TAFKAL80ETC concert";
     public final String Conjured_Mana_Cake= "Conjured Mana Cake";
 
-    public Item[] items;
+    private Item[] items;
 
 
     public Controller() {
@@ -48,7 +48,7 @@ public class Controller implements Initializable {
     ListView<Integer> ListViewQuality;
 
 
-    public  void updateQuality() {
+    public void updateQuality() {
         //use interface ItemStrategy to Encapsulate the different strategy
         ItemStrategy itemStrategy;
         for (Item item : items) {
@@ -70,15 +70,21 @@ public class Controller implements Initializable {
             }
             itemStrategy.update(item);
         }
-    }
 
-    public void showItemSellIn(){
+        //refresh the listView of SellIn and show the updated value
+        ListViewSellIn.getItems().setAll();
         for (Item item : items){
             ListViewSellIn.getItems().add(item.getSellIn());
         }
-    }
-    public void showItemQuality(){
+        //refresh the listView of Quality and show the updated value
+        ListViewQuality.getItems().setAll();
         for (Item item : items){
+            ListViewQuality.getItems().add(item.getQuality());
+        }
+    }
+    public void loadFile(){
+        for (Item item : items) {
+            ListViewSellIn.getItems().add(item.getSellIn());
             ListViewQuality.getItems().add(item.getQuality());
         }
     }
@@ -86,8 +92,11 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        //initialize the scene, showing the items' name , SellIn and Quality on the scene.
         for (Item item : items) {
             listView.getItems().add(item.getName());
+            ListViewSellIn.getItems().add(item.getSellIn());
+            ListViewQuality.getItems().add(item.getQuality());
         }
     }
 }
