@@ -15,7 +15,7 @@
          <children>
             <HBox spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="83.0" text="Load File" />
+                  <Button mnemonicParsing="false" onAction="#loadFile" prefHeight="23.0" prefWidth="83.0" text="Load File" />
                   <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="90.0" text="Add Item" />
                   <Region HBox.hgrow="ALWAYS" />
                   <Button layoutX="332.0" layoutY="10.0" mnemonicParsing="false" onAction="#updateQuality" prefHeight="23.0" prefWidth="109.0" text="Update" />

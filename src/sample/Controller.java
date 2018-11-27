@@ -2,10 +2,18 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.scene.control.ListView;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.JsonSyntaxException;
 
 public class Controller implements Initializable {
 
@@ -17,27 +25,45 @@ public class Controller implements Initializable {
     public void setItems(Item[] items) {
         this.items = items;
     }
+
     public final String Dexterity_Vest = "+5 Dexterity Vest";
     public final String Aged_Brie = "Aged Brie";
     public final String Elixir_of_the_Mongoose = "Elixir of the Mongoose";
     public final String Sulfuras_Hand_of_Ragnaros = "Sulfuras, Hand of Ragnaros";
     public final String Backstage_passes_to_a_TAFKAL80ETC_concert = "Backstage passes to a TAFKAL80ETC concert";
-    public final String Conjured_Mana_Cake= "Conjured Mana Cake";
+    public final String Conjured_Mana_Cake = "Conjured Mana Cake";
 
     private Item[] items;
+    JsonParser parser = new JsonParser();  //创建JSON解析器
+    //创建J
+    JsonObject object = (JsonObject) parser.parse(new FileReader("inv.json"));
+    JsonArray array = object.get("inventory").getAsJsonArray();    //得到为json的数组
 
 
-    public Controller() {
-        items = new Item[]{
-                new Item(Dexterity_Vest, 10, 20),
-                new Item(Aged_Brie, 2, 0),
-                new Item(Elixir_of_the_Mongoose, 5, 7),
-                new Item(Sulfuras_Hand_of_Ragnaros, 0, 80),
-                new Item(Backstage_passes_to_a_TAFKAL80ETC_concert, 15, 20),
-                new Item(Conjured_Mana_Cake, 3, 6)
-        };
+    public Controller() throws FileNotFoundException {
+        int length = array.size();
+        items = new Item[length];
+        for (int i = 0; i < items.length; i++) {
+            items[i] = new Item("default", 0, 0);
+        }
+        for (int i = 0; i < array.size(); i++) {
+            String N;
+            int S;
+            int Q;
+            JsonObject subObject = array.get(i).getAsJsonObject();
+            N = subObject.get("name").getAsString();
+            S = subObject.get("sellIn").getAsInt();
+            Q = subObject.get("quality").getAsInt();
+            System.out.println(S + " " + Q + " " + N);
+            items[i].setName(N);
+            items[i].setQuality(Q);
+            items[i].setSellIn(S);
+        }
+
+
 
     }
+
     @FXML
     ListView<String> listView;
 
@@ -73,17 +99,22 @@ public class Controller implements Initializable {
 
         //refresh the listView of SellIn and show the updated value
         ListViewSellIn.getItems().setAll();
-        for (Item item : items){
+        for (Item item : items) {
             ListViewSellIn.getItems().add(item.getSellIn());
         }
         //refresh the listView of Quality and show the updated value
         ListViewQuality.getItems().setAll();
-        for (Item item : items){
+        for (Item item : items) {
             ListViewQuality.getItems().add(item.getQuality());
         }
     }
-    public void loadFile(){
-        for (Item item : items) {
+
+    public void loadFile() {
+        listView.getItems().setAll();
+        ListViewSellIn.getItems().setAll();
+        ListViewQuality.getItems().setAll();
+        for (Item item : items){
+            listView.getItems().add(item.getName());
             ListViewSellIn.getItems().add(item.getSellIn());
             ListViewQuality.getItems().add(item.getQuality());
         }
@@ -92,11 +123,6 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //initialize the scene, showing the items' name , SellIn and Quality on the scene.
-        for (Item item : items) {
-            listView.getItems().add(item.getName());
-            ListViewSellIn.getItems().add(item.getSellIn());
-            ListViewQuality.getItems().add(item.getQuality());
-        }
+
     }
 }

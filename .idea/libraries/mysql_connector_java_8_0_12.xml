@@ -2,8 +2,13 @@
   <library name="mysql-connector-java-8.0.12">
     <CLASSES>
       <root url="jar://C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.12.jar!/" />
+      <root url="file://D:/gson Jar/GsonJSON" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="file://D:/gson Jar/GsonJSON" />
+    </SOURCES>
+    <jarDirectory url="file://D:/gson Jar/GsonJSON" recursive="false" />
+    <jarDirectory url="file://D:/gson Jar/GsonJSON" recursive="false" type="SOURCES" />
   </library>
 </component>

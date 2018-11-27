@@ -7,5 +7,18 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://D:/gson Jar/GsonJSON" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://D:/gson Jar/GsonJSON" />
+        </SOURCES>
+        <jarDirectory url="file://D:/gson Jar/GsonJSON" recursive="false" />
+        <jarDirectory url="file://D:/gson Jar/GsonJSON" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
   </component>
 </module>
