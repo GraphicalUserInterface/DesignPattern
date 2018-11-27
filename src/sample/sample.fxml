@@ -16,7 +16,7 @@
             <HBox spacing="10.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#loadFile" prefHeight="23.0" prefWidth="83.0" text="Load File" />
-                  <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="90.0" text="Add Item" />
+                  <Button mnemonicParsing="false" onAction="#changeWindow" prefHeight="23.0" prefWidth="90.0" text="PieChart" />
                   <Region HBox.hgrow="ALWAYS" />
                   <Button layoutX="332.0" layoutY="10.0" mnemonicParsing="false" onAction="#updateQuality" prefHeight="23.0" prefWidth="109.0" text="Update" />
                </children>
@@ -51,7 +51,7 @@
                   <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </VBox.margin>
             </Label>
-            <ListView fx:id="listView" prefHeight="265.0" prefWidth="291.0">
+            <ListView fx:id="listView" maxHeight="500.0" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="291.0">
                <VBox.margin>
                   <Insets bottom="8.0" left="8.0" right="8.0" />
                </VBox.margin>
@@ -67,7 +67,7 @@
                   <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </VBox.margin>
             </Label>
-            <ListView fx:id="ListViewSellIn" prefHeight="272.0" prefWidth="126.0">
+            <ListView fx:id="ListViewSellIn" maxHeight="500.0" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="126.0">
                <VBox.margin>
                   <Insets bottom="8.0" left="8.0" right="8.0" />
                </VBox.margin>
@@ -83,7 +83,7 @@
                   <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </VBox.margin>
             </Label>
-            <ListView fx:id="ListViewQuality" prefHeight="270.0" prefWidth="134.0">
+            <ListView fx:id="ListViewQuality" maxHeight="500.0" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="134.0">
                <VBox.margin>
                   <Insets bottom="8.0" left="8.0" right="8.0" />
                </VBox.margin>

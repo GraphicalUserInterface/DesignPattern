@@ -1,7 +1,10 @@
 package sample;
 
+
 import javafx.fxml.FXML;
+
 import javafx.fxml.Initializable;
+
 import javafx.scene.control.ListView;
 
 import java.io.FileNotFoundException;
@@ -10,10 +13,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.google.gson.JsonArray;
-import com.google.gson.JsonIOException;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.JsonSyntaxException;
+
 
 public class Controller implements Initializable {
 
@@ -59,9 +61,35 @@ public class Controller implements Initializable {
             items[i].setQuality(Q);
             items[i].setSellIn(S);
         }
-
-
-
+        int numb1 = 0;
+        int numb2 = 0;
+        int numb3 = 0;
+        int numb4 = 0;
+        int numb5 = 0;
+        int numb6 = 0;
+        for (Item item : items) {
+            switch (item.getName()) {
+                case "Sulfuras, Hand of Ragnaros":
+                    numb1++;
+                    break;
+                case "AgedBrie":
+                    numb2++;
+                    break;
+                case "Backstage passes to a TAFKAL80ETC concert":
+                    numb3++;
+                    break;
+                case "Conjured Mana Cake":
+                    numb4++;
+                    break;
+                case "Elixir of the Mongoose":
+                    numb5++;
+                    break;
+                case "+5 Dexterity Vest":
+                    numb6++;
+                    break;
+            }
+        }
+        System.out.println(numb1 + " " + numb2 + " " + numb3 + " " + numb4 + " "+ numb5 + " "+ numb6 + " ");
     }
 
     @FXML
@@ -113,7 +141,7 @@ public class Controller implements Initializable {
         listView.getItems().setAll();
         ListViewSellIn.getItems().setAll();
         ListViewQuality.getItems().setAll();
-        for (Item item : items){
+        for (Item item : items) {
             listView.getItems().add(item.getName());
             ListViewSellIn.getItems().add(item.getSellIn());
             ListViewQuality.getItems().add(item.getQuality());
@@ -125,4 +153,11 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
+    public void changeWindow() throws Exception {
+        Second second=new Second();
+        second.showWindow();
+
+
+    }
+
 }
