@@ -1,17 +1,15 @@
 package sample;
 
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
+
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
+
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.*;
+
 import javafx.stage.Stage;
-import javafx.scene.control.ListView;
+
 
 
 public class Main extends Application {
@@ -20,7 +18,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Update the Item");
 
-        Scene scene = new Scene(root, 600, 500);
+        Scene scene = new Scene(root, 1000, 750);
         primaryStage.setScene(scene);
         primaryStage.show();
 
@@ -32,3 +30,4 @@ public class Main extends Application {
         launch(args);
     }
 }
+/*https://github.com/GraphicalUserInterface/DesignPattern.git*/

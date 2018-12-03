@@ -5,12 +5,22 @@ public class Item {
     private String name;
     private int sellIn;
     private int quality;
+    private String creationDate;
 
-    public Item(String name, int sellIn, int quality) {
+    public String getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(String creationdate) {
+        this.creationDate = creationdate;
+    }
+
+    public Item(String name, int sellIn, int quality, String creationdate) {
         super();
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
+        this.creationDate = creationdate;
     }
 
     public String getName() {
