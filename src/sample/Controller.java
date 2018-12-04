@@ -143,7 +143,7 @@ public class Controller<i> implements Initializable {
         XYChart.Series set1 = new XYChart.Series();
         XYChart.Series set2 = new XYChart.Series();
 
-        while(i<6) {
+        while(i<7) {
             sell[i] = "" + items[i].getSellIn();
             cd[i] = ""+items[i].getCreationDate();
             set1.getData().add(new XYChart.Data<>(sell[i], numb[i]));
@@ -173,7 +173,7 @@ public class Controller<i> implements Initializable {
         XYChart.Series set1 = new XYChart.Series();
         XYChart.Series set2 = new XYChart.Series();
 
-        while(i<6) {
+        while(i<7) {
             sell[i] = "" + items[i].getSellIn();
             cd[i] = ""+items[i].getCreationDate();
             set1.getData().add(new XYChart.Data<>(sell[i], numb[i]));
