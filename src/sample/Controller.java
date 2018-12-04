@@ -32,7 +32,6 @@ public class Controller<i> implements Initializable {
 
     private Item[] items;
     JsonParser parser = new JsonParser();  //create JSON
-    //创建J
     private JsonObject object = (JsonObject) parser.parse(new FileReader("inv.json"));
     JsonArray array = object.get("inventory").getAsJsonArray();    //to get the array from JSON
 
