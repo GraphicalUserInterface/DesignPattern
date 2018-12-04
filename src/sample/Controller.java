@@ -13,7 +13,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+//Using gson
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -31,7 +31,7 @@ public class Controller<i> implements Initializable {
     }
 
     private Item[] items;
-    JsonParser parser = new JsonParser();  //create JSON
+    JsonParser parser = new JsonParser();  //create JSON parser
     private JsonObject object = (JsonObject) parser.parse(new FileReader("inv.json"));
     JsonArray array = object.get("inventory").getAsJsonArray();    //to get the array from JSON
 
