@@ -124,7 +124,7 @@ public class Second extends Application {
         }
 
         Scene scene = new Scene(new Group());
-        stage.setTitle("Imported Fruits");
+        stage.setTitle("Imported items");
         stage.setWidth(500);
         stage.setHeight(500);
         ObservableList<PieChart.Data> pieChartData =
@@ -136,7 +136,7 @@ public class Second extends Application {
                         new PieChart.Data("Elixir of the Mongoose", numb5),
                         new PieChart.Data("+5 Dexterity Vest", numb6));
         final PieChart chart = new PieChart(pieChartData);
-        chart.setTitle("Imported Fruits");
+        chart.setTitle("Imported items");
 
         ((Group) scene.getRoot()).getChildren().add(chart);
         stage.setScene(scene);

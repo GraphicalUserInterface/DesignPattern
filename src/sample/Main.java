@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Final.fxml"));
         primaryStage.setTitle("Update the Item");
 
         Scene scene = new Scene(root, 1000, 750);
