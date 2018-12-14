@@ -14,8 +14,8 @@ public class SoldItem {
                 '}';
     }
 
-    private String nameSold;
-    private int soldQuality;
+    public String nameSold;
+    public int soldQuality;
 
     public String getNameSold() {
         return nameSold;

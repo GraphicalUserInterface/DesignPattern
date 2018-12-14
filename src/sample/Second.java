@@ -23,7 +23,7 @@ public class Second extends Application {
     JsonArray array = object.get("inventory").getAsJsonArray();    //to get the array from JSON
 
 
-    public Second() throws FileNotFoundException {
+    public Second()throws FileNotFoundException {
         int length = array.size();
         items = new Item[length];
         for (int i = 0; i < items.length; i++) {
