@@ -74,13 +74,13 @@ public class Controller<i, cd> implements Initializable {
 
     private int length = array.size();
     private int times = 0;
-    private int[] storeSellIn = new int[length];
-    private int[] numbSellIn = new int[length];
-    private int[] numbCd = new int[length];
+    private int[] storeSellIn = new int[20];
+    private int[] numbSellIn = new int[20];
+    private int[] numbCd = new int[20];
     private int[] numbSellOnDay = new int[20];
     private int[] numbBuyOnDay = new int[20];
-    private String[] sell = new String[length];
-    private String[] cd = new String[length];
+    private String[] sell = new String[20];
+    private String[] cd = new String[20];
     private int totalProfits = 0;
     private int lastBuy = 0;
     private int totalBuy = 0;
